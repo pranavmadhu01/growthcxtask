@@ -1,0 +1,122 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #fafafa;
+  color: #6c6c6c;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  place-items: center;
+  padding: 20px;
+  .headerNavWrapper {
+    grid-column: 2/-1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    .closeIcon{
+      display: none;
+    }
+    h1 {
+      color: black;
+    }
+    ul {
+      grid-column: 2/5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style-type: none;
+      gap: 20px;
+    }
+    ul > li:hover {
+      color: black;
+      cursor: pointer;
+    }
+    div {
+      display: flex;
+      gap: 10px;
+      justify-content: space-around;
+      .loginButton {
+        border: none;
+        background-color: transparent;
+        color: #6c6c6c;
+        font-size: 17px;
+        padding: 12px 20px 12px 20px;
+
+      }
+      .registerButton {
+        padding: 12px 20px 12px 20px;
+        border: 1px solid #6c6c6c;
+        background-color: transparent;
+        border-radius: 12px;
+        color: #6c6c6c;
+        font-size: 17px;
+      }
+      .loginButton:hover,
+      .registerButton:hover {
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .menuIcon {
+    display: none;  
+  }
+  @media all and (max-width: 1000px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    .headerNavWrapper{
+      position: absolute;
+      top:0;
+      right:0;
+      height:100vh;
+      bottom:0; 
+      min-width: 220px;
+      width:50%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      justify-content: start;
+      gap:30px;
+      transform:scale(0);
+      transform-origin: right top;
+      background-color: #FFFFFF;
+      transition: all 200ms; 
+      .closeIcon{
+        display: block;
+        width:30px;
+        position: absolute;
+        top:20px;
+        right:20px;
+      }
+      ul {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+      }
+      ul>li{
+        text-align: left;
+        width:100%;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .headerNavWrapperCollapsed{
+      transform:scale(1);
+      transition: all 200ms; 
+
+
+
+    }
+    
+    .menuIcon {
+      display: block;
+    }
+  }
+}
